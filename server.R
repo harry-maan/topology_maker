@@ -39,7 +39,7 @@ shinyServer(function(input,output) {
   # This reactive output contains the dataset and display the dataset in table format
   output$run <- renderTable({ 
     #if(is.null(input$file)){return()}
-    system("bash /media/ajay/e64e5c93-92d9-4629-a905-5f74efd31865/ajay/Documents/harry_maan/R_shiny/topology_maker/Data/topology_maker.sh > job_top.txt")
+    system("bash /Data/topology_maker.sh > job_top.txt")
   })
   
   output$downloadData <- downloadHandler(
