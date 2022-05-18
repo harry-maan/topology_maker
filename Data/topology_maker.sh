@@ -22,7 +22,7 @@ function choose() {
 }
 
 function topology() {
-	source /opt/gromacs/bin/GMXRC
+	source $version/gromacs/bin/GMXRC
 	gmx pdb2gmx -f "$protein" -ignh  -ff charmm27 -water TIP3P
 	gmx editconf -f "$ligand" -o lig.gro
 cat << EOF > gmx_input_edit.py
@@ -118,6 +118,7 @@ function output() {
   cp  *.itp *.top *.pdb *.gro output/
   tar -czf mytar.tar.gz output/
   rm -rf ./output/ *.itp *.top *.pdb *.gro
+  zenity --info --title="Hey buddy" --text="You have done it Successfully! This program has written by Mr. Harvinder Singh, PhD scholar, Dept. of Pharmacology, PGIMER, Chandigarh harvindermaan4@gmail.com"
 }
 choose
 
